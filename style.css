@@ -1,35 +1,83 @@
-<style>
-    .container .box {
-        width: 540px;
-        margin: 50px auto; /* Center the container and add vertical spacing */
-        display: table;
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #5f4b8b, #72c2f1);
+  color: #fff;
+}
 
-    .container .box .box-row {
-        display: table-row;
-    }
+header {
+  padding: 1rem 2rem;
+  text-align: right;
+}
 
-    .container .box .box-cell {
-        display: table-cell;
-        width: 33%;
-        padding: 20px; /* Add padding for internal spacing */
-        margin: 10px; /* Add margin for spacing between cells */
-        box-sizing: border-box; /* Ensure padding doesn't affect width */
-    }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
 
-    .container .box .box-cell.box1 {
-        background: green;
-        color: white;
-        text-align: justify;
-    }
+.nav-links a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    .container .box .box-cell.box2 {
-        background: lightgreen;
-        text-align: justify;
-    }
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 6rem;
+  flex-wrap: wrap;
+}
 
-    .container .box .box-cell.box3 {
-        background: lime;
-        text-align: justify;
-    }
-</style>
+.intro {
+  max-width: 50%;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.intro h1 strong {
+  font-weight: 700;
+}
+
+.intro h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0.5rem 0;
+}
+
+.intro p {
+  font-size: 1rem;
+  margin: 1.5rem 0;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #4a2c83;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #6c3fc9;
+}
+
+.profile-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 6px solid #4a2c83;
+  object-fit: cover;
+}
