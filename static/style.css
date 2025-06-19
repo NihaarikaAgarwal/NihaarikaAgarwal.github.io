@@ -203,113 +203,92 @@ section h2 {
 .p3 .word-animate {
   animation-delay: calc(var(--i) * 0.15s + 10s);
 }
+
 /*===toolkit===*/
 
 body {
     font-family: 'heebo', sans-serif;
     margin: 0;
     padding: 40px;
-    background: linear-gradient(to bottom right, #5e5fa3, #a3dfe4); /* Background gradient */
-    color: #333; /* For general text, good contrast */
+    background: linear-gradient(to bottom right, #5e5fa3, #a3dfe4); 
+    color: #333; 
     min-height: 100vh;
     box-sizing: border-box;
 }
 
-/* === Main Layout (Two Outer Columns) === */
+/* === Main Layout (2 outer Columns) === */
+
 .toolkit-section {
     display: flex;
-    gap: 80px; /* Space between the two main columns */
+    gap: 80px; 
     justify-content: center;
-    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
-    max-width: 1200px; /* Max width for the whole content block */
-    margin: 0 auto; /* Center the entire section */
+    flex-wrap: wrap; 
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 .column {
     display: flex;
     flex-direction: column;
-    gap: 0; /* Managed by specific margins/padding below */
-    flex: 1 1 45%; /* Allows these main columns to take about 45% of available space */
-    min-width: 380px; /* Ensure columns don't shrink too much */
-    max-width: 550px; /* Ensure columns don't grow too much */
+    gap: 0; 
+    flex: 1 1 45%; 
+    min-width: 380px; 
+    max-width: 550px; 
 }
 
-/* Specific gap below Programming Languages card (using ID for robustness) */
 #programming-languages-card {
-    margin-bottom: 80px; /* Creates the desired gap to Research heading */
+    margin-bottom: 80px; 
 }
 
-/* Remove diagnostic margin and ensure spacing is correct */
-/* These rules were causing 400px push and other incorrect margins */
-/* Ensure these rules are NOT present in your file anymore if you copied from previous mixed versions */
-/* .column > div.card-wrapper:nth-child(1),
-.column > div.card-wrapper:nth-child(2) {
-    margin-bottom: 0;
-} */
-
-
-/* === TOOLS & LIBRARIES SECTION SPECIFIC LAYOUT (INNER TWO COLUMNS) === */
+/* === tools and lib with 2 inner columns === */
 .tools-libraries-layout {
-    display: flex; /* Makes its direct children (tools-sub-column) into columns */
-    gap: 10px; /* Gap between the two inner sub-columns */
-    width: 100%; /* Make it take the full width of its parent .column */
-    margin-top: 0; /* Ensures consistent gap below main header */
-    align-items: flex-start; /* Aligns columns to the top if their content height differs */
+    display: flex; 
+    gap: 10px; 
+    width: 100%; 
+    margin-top: 0; 
+    align-items: flex-start;
 }
 
-/* Styles for each of the two inner sub-columns */
 .tools-sub-column {
     display: flex;
-    flex-direction: column; /* Stacks cards vertically within each sub-column */
-    gap: 10px; /* Gap between the two cards inside each sub-column */
-    flex: 1; /* By default, makes them equal width */
+    flex-direction: column; 
+    gap: 10px; 
+    flex: 1; 
 }
 
-/* Crucial for width calculation and preventing wrap for the main columns */
 .tools-sub-column:first-child {
-    flex-basis: calc(60% - 5px); /* Accounts for half the gap on its side */
+    flex-basis: calc(60% - 5px); 
 }
 .tools-sub-column:last-child {
-    flex-basis: calc(40% - 5px); /* Accounts for half the gap on its side */
+    flex-basis: calc(40% - 5px); 
 }
 
-
-/* === Card Wrapper (The container for individual cards' background and position) === */
 .card-wrapper{
-    position: relative; /* Essential for positioning header inside it */
+    position: relative; 
     width: 100%;
     min-height: 150px;
-    background: rgba(255, 255, 255, 0.05); /* Translucent white background */
+    background: rgba(255, 255, 255, 0.05); 
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    overflow: hidden; /* Important for containing elements within the rounded corners */
+    overflow: hidden; 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(128, 218, 235, 0.4); /* Example: 2px solid, slightly visible white */
-    /* You can remove or comment out border-image if you want the solid border to be primary */
-    border-style: solid;
-    /*border-image: linear-gradient(to right, rgba(83, 69, 129, 0.28), rgba(255, 255, 255, 0.28)) 2;*/
-    /* Remove or reduce border-width if it's causing unexpected behavior with border-image */
-    /* border-width: 300px; */ /* This value is extremely high, likely unintended */
-    /* border-color: #fff; */
-    
+    border: 1px solid rgba(128, 218, 235, 0.4); 
+    border-style: solid;    
 }
 
-/* Specific height for the Research card if it should be different */
 .card-wrapper.research-card-wrapper {
     min-height: 250px;
     min-width: 300px;
 }
 
-
-/* === Main Section Headers (e.g., "Tools/Libraries", "Programming Languages", "Research domains/Skills") === */
 .section-header {
-    background: linear-gradient(to right, #5e5fa3, #8eddeb); /* Header box background */
+    background: linear-gradient(to right, #5e5fa3, #8eddeb); 
     padding: 10px 20px;
     border-radius: 10px;
     font-weight: bold;
     font-size: 26px;
-    color: white; /* Changed color to white for better contrast on header */
+    color: white; 
     width: fit-content;
     z-index: 2;
     border:20px;
@@ -319,33 +298,29 @@ body {
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-
-    margin-bottom: 10px; /* Gap below the header (now consistent for all main headers) */
+    margin-bottom: 10px; 
     margin-top: 0;
 }
 
-/* === Positioning for headers *inside* card-wrapper (sub-section headers in Tools/Libraries) === */
 .card-wrapper > .section-header {
     position: absolute;
-    top: -5px; /* Adjusted to prevent truncated text */
+    top: -5px; 
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
 }
 
-
-/* === Actual Content within the Card (Holds text, icons) === */
 .card-content {
-    padding: 10px; /* Reduced internal padding */
+    padding: 10px; 
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-right: 20px; /* Maintains slightly larger right padding */
+    padding-right: 20px; 
     width: 100%;
     height: 100%;
     box-sizing: border-box;
 }
 
-/* === Sub-Card Titles (e.g., "ML & Data Science Frameworks") === */
+/* === Sub-Card Titles== */
 .card-content h4 {
     margin-top: 0;
     margin-bottom: 10px; /* Adjusted for tighter spacing */
@@ -356,7 +331,7 @@ body {
     font-family: 'heebo',sans-serif;
 }
 
-/* === Icon Grid Layout === */
+/* === Icon Grid === */
 .icon-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Default to 3 columns */
@@ -367,28 +342,25 @@ body {
     margin-right: -8px;
 }
 
-/* Specific adjustment for LLM section icon grid (4 columns) */
 .llm-framework--grid-card-wrapper .card-content .icon-grid {
-    grid-template-columns: repeat(3, 1fr);
-    
-}
-/* Specific adjustment for DevOps & Deployment icon grid (2 columns) */
-.devops-automation-grid-card-wrapper .card-content .icon-grid { /* Uses the new class added in HTML */
-    grid-template-columns: repeat(2, 1fr);
-    
+    grid-template-columns: repeat(3, 1fr);   
 }
 
-/* New styling for the div wrapping each icon and label */
+.devops-automation-grid-card-wrapper .card-content .icon-grid { 
+    grid-template-columns: repeat(2, 1fr);   
+}
+
 .icon-grid > div {
     display: flex;
-    flex-direction: column; /* Stack image and span vertically */
-    align-items: center; /* Center image and span horizontally */
-    text-align: center; /* Ensure text is centered if it wraps */
-    padding: 0px; /* Crucial: No internal padding to save width */
-    min-width: 0; /* Allow item to shrink as much as possible */
-    position: relative; /* ADD THIS LINE */
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+    padding: 0px; 
+    min-width: 0; 
+    position: relative; 
     min-height: 10px;
 }
+
 .icon-grid > div::before {
     content: '';
     display: block;
@@ -396,18 +368,17 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 92px; /* Adjust the size of the transparent circle */
-    height: 92px; /* Adjust the size of the transparent circle */
-    border-radius: 10px; /* Makes it a perfect circle */
-    background-color: rgba(255, 255, 255, 0.15); /* White with 15% opacity */
-    pointer-events: none; /* Allows clicks to pass through to the icon */
-    z-index: -1; /* Places it behind the icon and label */
+    width: 92px; 
+    height: 92px; 
+    border-radius: 10px; 
+    background-color: rgba(255, 255, 255, 0.15); 
+    pointer-events: none; 
+    z-index: -1; 
 }
 
-/* Adjust icon image size to accommodate labels without pushing width */
 .icon-grid img {
-    width: 60px; /* Reduced from 50px to help fit in columns */
-    height: 60px; /* Reduced from 50px */
+    width: 60px; 
+    height: 60px; 
     object-fit: contain;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
     transition: transform 0.2s ease-in-out;
@@ -417,17 +388,16 @@ body {
   transform: scale(1.1);
 }
 
-/* Styling for the labels below icons */
 .icon-grid span {
-    font-size: 14px; /* Smaller font size for labels */
+    font-size: 14px; 
     color: #0C150D ;
-    margin-top: 4px; /* Small space between icon and label */
-    word-break: break-word; /* Allow long words to break onto new lines */
+    margin-top: 4px; 
+    word-break: break-word; 
     line-height: 1.2;
-    padding: 0 2px; /* Small horizontal padding for labels themselves to prevent cutting */
+    padding: 0 2px; 
 }
 
-/* === Research Card Specific Content Styling === */
+/* === Research Card === */
 .research-card-wrapper .card-content p {
     font-size: 24px;
     color: #333;
@@ -438,29 +408,28 @@ body {
     font-weight: normal;
 }
 
-/* Initial state: elements are invisible and offset */
 .animate-slide-right {
   opacity: 0;
-  transform: translateX(50px); /* Starts 50px to the right of its final position */
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
-  pointer-events: none; /* Prevents interaction in initial state */
+  transform: translateX(50px); 
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; 
+  pointer-events: none; 
 }
 
 .animate-slide-left {
   opacity: 0;
-  transform: translateX(-50px); /* Starts 50px to the left of its final position */
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
-  pointer-events: none; /* Prevents interaction in initial state */
+  transform: translateX(-50px); 
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; 
+  pointer-events: none; 
 }
 
-/* Final state: visible and in place */
 .visible {
   opacity: 1;
-  transform: translateX(0) translateY(0); /* Moves to its final position */
-  pointer-events: auto; /* Allows interaction when visible */
+  transform: translateX(0) translateY(0); 
+  pointer-events: auto; 
 }
 
 /* === Experience Section === */
+
 .experience-section {
   padding: 60px 60px 40px 60px;
 }
@@ -559,12 +528,11 @@ body {
   align-self: center; 
 }
 .hover-details ul li {
-  font-size: 20px; /* Adjust this value to your desired font size */
+  font-size: 20px; 
   font-weight: light;
   margin-left: 20px;
 }
 
-/* Show when wrapper is hovered */
 .experience-wrapper:hover .hover-details {
   max-height: 500px;
   opacity: 1;
@@ -573,6 +541,7 @@ body {
 }
 
 /* === Projects */
+
 .projects-section {
   padding: 40px;
   margin-bottom: 50px;
@@ -701,8 +670,6 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    /* Corrected: Adjusted values for a visible, subtle L/R/B shadow */
-    /* Use a standard rgba black shadow for a more common "lifted" effect */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
     padding: 18px 28px;
     font-size: 24px;
@@ -717,10 +684,9 @@ body {
     color: #8233e2;
     transform: translateY(-3px);
     /* Corrected: Use only one valid color format (e.g., rgba) */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow for hover */
-    /* If you wanted the blueish color on hover shadow, it would be: */
-    /* box-shadow: 0 12px 25px #8bd5f2; */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); 
 }
+
 /* animation for fly in */
 .animate-slide-right,
 .animate-slide-left,
@@ -761,6 +727,7 @@ body {
 }
 
 /*=== Publications Section ===*/
+
 .published-container {
   display: flex;
   gap: 40px;
@@ -920,11 +887,11 @@ body {
 
 /* === Contact Section === */
 .contact-intro-text h2 {
-  background: none !important;
-  -webkit-background-clip: unset !important;
-  -webkit-text-fill-color: #ffffff !important; 
-  color: #EDF7FA !important;
-  text-align: left !important;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #ffffff; 
+  color: #EDF7FA;
+  text-align: left;
   margin-right: 60px;
   margin-left: 0px;
   max-width: 600px;
