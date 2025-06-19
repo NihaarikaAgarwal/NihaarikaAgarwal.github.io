@@ -1,0 +1,1084 @@
+/*  Global  */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  background: linear-gradient(to bottom, #534581 0%, #82cce0 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  padding-top: 70px;
+  line-height: 1.6;
+}
+
+/* === Navigationbar === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #534581;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  padding-right: 60px; 
+  font-family: 'Heebo', sans-serif;
+  font-weight: medium
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(128,218,235,1);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 52px;
+  font-weight: 700;
+  font-family: 'heebo', sans-serif;
+  letter-spacing: 1px;
+  background: #EDF7FA;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 60px;
+  margin-top: 30px;
+}
+
+/* === about === */
+
+.intro-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 0px 80px 120px;
+  gap: 0px;
+  position: relative; 
+}
+
+.text-content {
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+
+.text-content h1 {
+  font-size: 54px;
+  color: #ffffff;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif
+}
+
+.text-content h1 span.highlight {
+  font-weight: bold;
+  font-size: 70px;
+  background: linear-gradient(to right, #EDF7FA, #80DAEB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  white-space: nowrap;
+  margin-top: 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.text-content h2 {
+  font-size: 34px;
+  color: #8eddeb;
+  font-weight: regular;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-family: 'Heebo', sans-serif;
+}
+
+.text-content p {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: light;
+  max-width: 1000px;
+  font-family: 'Heebo', sans-serif;
+}
+
+.resume-button {
+  display: inline-block;
+  background-color: #4d3a72;
+  color: #e0e0e0;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font-size: 26px;
+  font-weight: regular;
+  margin-top: 25px;
+  text-decoration: none;
+  box-shadow: -4px -4px 0 rgba(0, 0, 0, 0), 
+              4px -4px 12px rgba(128, 218, 235, 0.8); 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-button:hover {
+  background-color: #3f2e5d;
+  box-shadow: -4px -4px 0 rgba(0, 0, 0, 0), 
+              6px -6px 20px rgba(128, 218, 235, 0.9); 
+}
+
+.profile-photo {
+  position: relative;
+  justify-self: end;
+  flex: 0 0 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -280px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.profile-photo img {
+  position: relative;
+  z-index: 1;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.profile-photo::before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: #3c2f63;
+  border-radius: 50%;
+  z-index: 0;
+  bottom: -20px;
+  left: -10px;
+  opacity: 0.5;
+  filter: blur(5px);
+}
+
+/* === Word-by-Word Animation === */
+@keyframes wordReveal {
+  0% { opacity: 0; transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.word-animate {
+  display: inline-block;
+  opacity: 0;
+  animation: wordReveal 0.5s forwards;
+}
+
+.p1 .word-animate {
+  animation-delay: calc(var(--i) * 0.15s);
+}
+.p2 .word-animate {
+  animation-delay: calc(var(--i) * 0.15s + 5s);
+}
+.p3 .word-animate {
+  animation-delay: calc(var(--i) * 0.15s + 10s);
+}
+/*===toolkit===*/
+
+body {
+    font-family: 'heebo', sans-serif;
+    margin: 0;
+    padding: 40px;
+    background: linear-gradient(to bottom right, #5e5fa3, #a3dfe4); /* Background gradient */
+    color: #333; /* For general text, good contrast */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* === Main Layout (Two Outer Columns) === */
+.toolkit-section {
+    display: flex;
+    gap: 80px; /* Space between the two main columns */
+    justify-content: center;
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    max-width: 1200px; /* Max width for the whole content block */
+    margin: 0 auto; /* Center the entire section */
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Managed by specific margins/padding below */
+    flex: 1 1 45%; /* Allows these main columns to take about 45% of available space */
+    min-width: 380px; /* Ensure columns don't shrink too much */
+    max-width: 550px; /* Ensure columns don't grow too much */
+}
+
+/* Specific gap below Programming Languages card (using ID for robustness) */
+#programming-languages-card {
+    margin-bottom: 80px; /* Creates the desired gap to Research heading */
+}
+
+/* Remove diagnostic margin and ensure spacing is correct */
+/* These rules were causing 400px push and other incorrect margins */
+/* Ensure these rules are NOT present in your file anymore if you copied from previous mixed versions */
+/* .column > div.card-wrapper:nth-child(1),
+.column > div.card-wrapper:nth-child(2) {
+    margin-bottom: 0;
+} */
+
+
+/* === TOOLS & LIBRARIES SECTION SPECIFIC LAYOUT (INNER TWO COLUMNS) === */
+.tools-libraries-layout {
+    display: flex; /* Makes its direct children (tools-sub-column) into columns */
+    gap: 10px; /* Gap between the two inner sub-columns */
+    width: 100%; /* Make it take the full width of its parent .column */
+    margin-top: 0; /* Ensures consistent gap below main header */
+    align-items: flex-start; /* Aligns columns to the top if their content height differs */
+}
+
+/* Styles for each of the two inner sub-columns */
+.tools-sub-column {
+    display: flex;
+    flex-direction: column; /* Stacks cards vertically within each sub-column */
+    gap: 10px; /* Gap between the two cards inside each sub-column */
+    flex: 1; /* By default, makes them equal width */
+}
+
+/* Crucial for width calculation and preventing wrap for the main columns */
+.tools-sub-column:first-child {
+    flex-basis: calc(60% - 5px); /* Accounts for half the gap on its side */
+}
+.tools-sub-column:last-child {
+    flex-basis: calc(40% - 5px); /* Accounts for half the gap on its side */
+}
+
+
+/* === Card Wrapper (The container for individual cards' background and position) === */
+.card-wrapper{
+    position: relative; /* Essential for positioning header inside it */
+    width: 100%;
+    min-height: 150px;
+    background: rgba(255, 255, 255, 0.05); /* Translucent white background */
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Important for containing elements within the rounded corners */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(128, 218, 235, 0.4); /* Example: 2px solid, slightly visible white */
+    /* You can remove or comment out border-image if you want the solid border to be primary */
+    border-style: solid;
+    /*border-image: linear-gradient(to right, rgba(83, 69, 129, 0.28), rgba(255, 255, 255, 0.28)) 2;*/
+    /* Remove or reduce border-width if it's causing unexpected behavior with border-image */
+    /* border-width: 300px; */ /* This value is extremely high, likely unintended */
+    /* border-color: #fff; */
+    
+}
+
+/* Specific height for the Research card if it should be different */
+.card-wrapper.research-card-wrapper {
+    min-height: 250px;
+    min-width: 300px;
+}
+
+
+/* === Main Section Headers (e.g., "Tools/Libraries", "Programming Languages", "Research domains/Skills") === */
+.section-header {
+    background: linear-gradient(to right, #5e5fa3, #8eddeb); /* Header box background */
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 26px;
+    color: white; /* Changed color to white for better contrast on header */
+    width: fit-content;
+    z-index: 2;
+    border:20px;
+    border-image: linear-gradient(to right, rgba(83, 69, 129, 0.28), rgba(255, 255, 255, 0.28)) 2;
+    position: relative;
+    align-self: center;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+
+    margin-bottom: 10px; /* Gap below the header (now consistent for all main headers) */
+    margin-top: 0;
+}
+
+/* === Positioning for headers *inside* card-wrapper (sub-section headers in Tools/Libraries) === */
+.card-wrapper > .section-header {
+    position: absolute;
+    top: -5px; /* Adjusted to prevent truncated text */
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+
+/* === Actual Content within the Card (Holds text, icons) === */
+.card-content {
+    padding: 10px; /* Reduced internal padding */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px; /* Maintains slightly larger right padding */
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* === Sub-Card Titles (e.g., "ML & Data Science Frameworks") === */
+.card-content h4 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Adjusted for tighter spacing */
+    font-size: 22px;
+    color: #EDF7FA;
+    text-align: center; /* Keep these sub-titles left-aligned */
+    font-weight: normal;
+    font-family: 'heebo',sans-serif;
+}
+
+/* === Icon Grid Layout === */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns */
+    gap: 21px; /* Adjusted gap */
+    justify-items: center;
+    align-items: center;
+    margin-left: 2px;
+    margin-right: -8px;
+}
+
+/* Specific adjustment for LLM section icon grid (4 columns) */
+.llm-framework--grid-card-wrapper .card-content .icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+/* Specific adjustment for DevOps & Deployment icon grid (2 columns) */
+.devops-automation-grid-card-wrapper .card-content .icon-grid { /* Uses the new class added in HTML */
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+/* New styling for the div wrapping each icon and label */
+.icon-grid > div {
+    display: flex;
+    flex-direction: column; /* Stack image and span vertically */
+    align-items: center; /* Center image and span horizontally */
+    text-align: center; /* Ensure text is centered if it wraps */
+    padding: 0px; /* Crucial: No internal padding to save width */
+    min-width: 0; /* Allow item to shrink as much as possible */
+    position: relative; /* ADD THIS LINE */
+    min-height: 10px;
+}
+.icon-grid > div::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 92px; /* Adjust the size of the transparent circle */
+    height: 92px; /* Adjust the size of the transparent circle */
+    border-radius: 10px; /* Makes it a perfect circle */
+    background-color: rgba(255, 255, 255, 0.15); /* White with 15% opacity */
+    pointer-events: none; /* Allows clicks to pass through to the icon */
+    z-index: -1; /* Places it behind the icon and label */
+}
+
+/* Adjust icon image size to accommodate labels without pushing width */
+.icon-grid img {
+    width: 60px; /* Reduced from 50px to help fit in columns */
+    height: 60px; /* Reduced from 50px */
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+    transition: transform 0.2s ease-in-out;
+}
+
+.icon-grid img:hover {
+  transform: scale(1.1);
+}
+
+/* Styling for the labels below icons */
+.icon-grid span {
+    font-size: 14px; /* Smaller font size for labels */
+    color: #0C150D ;
+    margin-top: 4px; /* Small space between icon and label */
+    word-break: break-word; /* Allow long words to break onto new lines */
+    line-height: 1.2;
+    padding: 0 2px; /* Small horizontal padding for labels themselves to prevent cutting */
+}
+
+/* === Research Card Specific Content Styling === */
+.research-card-wrapper .card-content p {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-family: 'heebo',sans-serif;
+    font-weight: normal;
+}
+
+/* Initial state: elements are invisible and offset */
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(50px); /* Starts 50px to the right of its final position */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+  pointer-events: none; /* Prevents interaction in initial state */
+}
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-50px); /* Starts 50px to the left of its final position */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+  pointer-events: none; /* Prevents interaction in initial state */
+}
+
+/* Final state: visible and in place */
+.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0); /* Moves to its final position */
+  pointer-events: auto; /* Allows interaction when visible */
+}
+
+/* === Experience Section === */
+.experience-section {
+  padding: 60px 60px 40px 60px;
+}
+
+.experience-card {
+  background: linear-gradient(to bottom right, #4b2d73, #0a0a0a); 
+  border-radius: 16px;
+  padding: 24px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 90%;           
+  margin: 0 auto 00px;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+.experience-card h3 {
+  font-size: 26px; 
+  font-weight: bold;
+  color: #7ee9f3; 
+  margin-bottom: -10px;
+}
+
+/* Title Styling */
+.role-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #2d6cdf; 
+  margin-bottom: 8px;
+}
+
+/* Flex layout for university & date */
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.left-info .university {
+  font-size: 26px;
+  color: #f0f0f0;
+  margin-bottom: 0px;
+  font-weight: medium;  
+  margin: 0;
+}
+
+.right-info .date {
+  font-size: 26px;
+  margin-bottom: 0px;
+  color: #f0f0f0;
+  font-weight: medium;  
+}
+
+.tags span {
+  display: inline-block;
+  background: #7a4cb3;        
+  color: #ffffff;             
+  font-size: 14px;
+  padding: 6px 14px;
+  margin: 5px 5px 0 0;
+  border-radius: 999px;       
+  font-weight: regular;
+  font-family: 'heebo', sans-serif;
+  letter-spacing: 1px;
+}
+
+.experience-wrapper {
+  margin-bottom: 40px;
+  transition: all 0.6s ease;
+}
+
+.experience-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+/* Initially hidden */
+.hover-details {
+  background-color: #000;
+  color: #fff;
+  padding: 0 10px;
+  border-radius: 12px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: max-height 0.6s ease, opacity 0.4s ease, transform 0.4s ease;
+  margin: 15px auto 0; 
+  font-weight: 50; 
+  width: 90%;
+  align-self: center; 
+}
+.hover-details ul li {
+  font-size: 20px; /* Adjust this value to your desired font size */
+  font-weight: light;
+  margin-left: 20px;
+}
+
+/* Show when wrapper is hovered */
+.experience-wrapper:hover .hover-details {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 20px 24px;
+}
+
+/* === Projects */
+.projects-section {
+  padding: 40px;
+  margin-bottom: 50px;
+}
+
+.projects-container {
+  max-width: 1000px;
+  min-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* More Projects*/
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.project-card {
+  width: 100%;
+  position: relative;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  opacity: 1;
+  transform: none;
+  overflow: hidden;
+  background: transparent;
+  min-height: 215px;
+  border-bottom: none;
+
+}
+
+.project-line {
+  position: absolute;
+  bottom: 0;                
+  left: 10%;                
+  width: 80%;               
+  height: 1px;
+  background-color: white;
+}
+
+.project-content {
+  flex: 1;
+  padding-left: 15px; 
+}
+
+.project-card img {
+  width: 240px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-content h3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 30px;
+  color: #000; 
+  margin-top: -6px; 
+  margin-bottom: 5px; 
+}
+
+.project-content span {
+  font-weight: extra bold;
+  font-size: 18px;
+}
+
+.project-content p {
+  font-weight: light;
+  font-size: 24px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px; 
+}
+
+.meta img {
+  width: 24px;
+  height: 24px;
+}
+
+.project-content {
+  flex: 1;
+  color: #000;         
+  font-weight: 350;    
+  font-size: 20px;     
+  margin-top: 0;       
+}
+
+.date-tag {
+  background-color: #7a4cb3;  
+  color: #fff;                
+  font-weight: 700;           
+  font-size: 14px;
+  padding: 1px 14px;         
+  border-radius: 999px;       
+  display: inline-block;
+  margin-bottom: 15px; 
+}
+
+.github-icon {
+  display: flex;
+  align-items: center; 
+}
+
+.github-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  position: relative;
+  top: -9px; 
+}
+
+.pub-link {
+    background-color: #3f2e6b;
+    color: #aee8ff;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    /* Corrected: Adjusted values for a visible, subtle L/R/B shadow */
+    /* Use a standard rgba black shadow for a more common "lifted" effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+    padding: 18px 28px;
+    font-size: 24px;
+    font-weight: semi-bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.pub-link:hover {
+    background-color: #5dd0ef;
+    color: #8233e2;
+    transform: translateY(-3px);
+    /* Corrected: Use only one valid color format (e.g., rgba) */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow for hover */
+    /* If you wanted the blueish color on hover shadow, it would be: */
+    /* box-shadow: 0 12px 25px #8bd5f2; */
+}
+/* animation for fly in */
+.animate-slide-right,
+.animate-slide-left,
+.animate-slide-up {
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  pointer-events: none;
+}
+
+.animate-slide-right {
+  transform: translateX(50px);
+}
+
+.animate-slide-left {
+  transform: translateX(-50px);
+}
+
+.animate-slide-up {
+  transform: translateY(40px);
+}
+
+/* Final state: visible and in place */
+.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  pointer-events: auto;
+}
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/*=== Publications Section ===*/
+.published-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.published-section {
+  margin-bottom: 120px; 
+}
+
+.publication-card {
+  background: linear-gradient(to right, #12171c, #6d619a);
+  color: #aef6ff;
+  border-radius: 16px;
+  padding: 20px 25px;
+  height: 340px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  padding-top: 10px;
+  word-break: break-word;
+}
+
+.publication-card h3 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #7ee9f3;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-top: 0;     
+  padding-top: 0;
+}
+
+.publication-card p {
+  font-size: 16px;
+  color: #f0f0f0;
+  margin-bottom: 2px;
+  text-align: centre;
+  padding: -10px 25px 20px 15px;
+  word-break: break-word
+  
+}
+
+.publication-card p:first-of-type {
+  margin-top: 10px;   
+  margin-bottom: 15px;  
+  font-size: 20px;     
+  font-weight: 400;  
+  word-break: break-word; 
+  text-align:left;
+}
+
+.pub-details {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px, 20px;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #b3f5ff;
+  font-weight: 300;
+  border: 0.2px solid rgb(99, 62, 174);  
+  margin-top: -10px;   
+  display: inline-block;  
+  flex-direction: column;
+  align-items: flex-start;      
+  gap: 12px;
+  min-height: 80px; 
+}
+
+.pub-details p {
+  color: #aee8ff;         
+  font-size: 15px;        
+  max-width: 320px;       
+  line-height: 1.4;       
+  margin: 0 0 10px 0;
+  padding: 0px;
+  font-weight: 100; 
+  text-align: left;   
+  padding-left: 28px;
+  padding-top: 10px;
+}
+
+.pub-meta {
+  margin-left: -50px; 
+  text-align: left;
+  font-size: 15px;
+  font-weight: 300;
+  color: #aee8ff;
+}
+
+.publications-button {
+  background-color: #733fdb;
+  color: #b3f5ff;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 18px;
+  text-decoration: none;
+  width: fit-content;
+  display: inline-block;
+  margin-left: 25px; 
+  margin-top: 10px;
+  margin-bottom: 30px;
+  box-shadow: 3px 3px 12px rgba(179, 245, 255, 1);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.publications-button:hover {
+  background-color: #aee8ff;
+  color: #733fdb; 
+  transform: translateY(-2px);
+}
+
+.pub-link:active {
+  background-color: #aee8ff; 
+  color: #733fdb; 
+}
+
+/*animation*/
+.rotate-in-left,
+.rotate-in-right {
+  opacity: 0;
+  transform: translateX(0) rotate(0deg);
+  transition: none;
+  will-change: transform, opacity;
+}
+
+.rotate-in-left.visible {
+  animation: rotateSlideInLeft 1.3s ease-out forwards;
+}
+.rotate-in-right.visible {
+  animation: rotateSlideInRight 1.3s ease-out forwards;
+}
+
+@keyframes rotateSlideInLeft {
+  0% {
+    transform: translateX(-100%) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateSlideInRight {
+  0% {
+    transform: translateX(100%) rotate(45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* === Contact Section === */
+.contact-intro-text h2 {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important; 
+  color: #EDF7FA !important;
+  text-align: left !important;
+  margin-right: 60px;
+  margin-left: 0px;
+  max-width: 600px;
+  font-family: Space-Grotesk, sans-serif ;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 1.0em; 
+}
+
+.contact-intro-text p:nth-of-type(1) {
+  color: #EDF7FA;
+  margin-top: -40px; 
+  font-weight: 500; 
+  font-size: 30px; 
+  font-family: 'Space-grotesk', sans-serif;
+  word-break: break-word;
+}
+
+.contact-intro-text p:nth-of-type(2)
+{
+  color: #4e1682;      
+  font-size: 16px;      
+  font-weight: 300;     
+  margin-top: 40px;    
+}
+
+.contact-intro-text p a {
+  color: #534581;            
+  text-decoration: none;     
+  font-weight: medium;
+  font-family: 'Roberto-mono', sans-serif;
+  font-size: 26px ;
+}
+
+.contact-intro-text p a:hover {
+  color: #42c4e8;            
+  text-decoration: underline;
+}
+
+.contact-intro-text p:nth-of-type(3) {
+  color: #ffffff;       
+  font-size: 16px;      
+  font-weight: 300;     
+  margin-top: 10px;     
+}
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+  width: 400px;
+  height: 500px;
+  backdrop-filter: blur(10px);          
+  -webkit-backdrop-filter: blur(10px); 
+  background: (135deg, rgba(199, 232, 242, 0.5), rgba(139, 181, 211, 0.5) );
+  backdrop-filter: blur(50px);
+  border-radius: 20px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-text {
+  flex: 1 1 300px;
+  color: #EDF7FA;
+}
+
+.contact-text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-text a {
+  color: #aee8ff;
+  text-decoration: none;
+}
+
+.contact-form {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: #666666;         
+  font-weight: 300;    
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-family: inherit;
+  width: 100%;
+  color: #000;           
+  font-weight: 300;
+}
+
+.contact-form button {
+  background-color: #3f2e6b;
+  color: #aee8ff;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 30px #8bd5f2;
+  transition: all 0.3s ease;
+  margin-top: 12px; 
+  width: 250px;  
+  align-self: center;
+  margin-bottom: -15px;
+}
+
+.contact-form button:hover {
+  background-color: #5dd0ef;
+  transform: translateY(-2px);
+  color: #8233e2;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: -550px;
+}
+
+.social-icons img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(174, 246, 255, 0.4);
+}
+
+
+
+
