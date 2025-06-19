@@ -1,0 +1,14 @@
+{
+  "single_category_classifier": {
+    "name": "conversation_category",
+    "full_name": "Conversation Category Classifier",
+    "version": "custom_v1",
+    "prompt": "Classify the learner's message into one of the following categories: 'Task', 'Follow ups', or 'Misc'. Choose the single best category.",
+    "criteria": [
+      "Task: The message explicitly or implicitly asks SENSAI to perform a new action or solve a new problem. This includes requests for steps, solutions, explanations of how to do something, or direct commands for SENSAI to take action.",
+      "Follow ups: The message builds on an existing, in-progress task, seeks clarification on a previous SENSAI response, or continues a dialogue directly related to a previous interaction with the goal of advancing or concluding the ongoing task/topic.",
+      "Misc: The message has no actionable task, does not refine a previous task, is a general social comment (e.g., 'Thanks!', 'Hi'), or falls outside the scope of task-oriented or follow-up conversation."
+    ],
+    "chunker": "whole_conversation_context"
+  }
+}
